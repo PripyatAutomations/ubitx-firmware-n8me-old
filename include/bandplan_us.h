@@ -1,0 +1,99 @@
+#pragma once
+#define	BANDPLAN_US_GENERAL	0x01
+#define	BANDPLAN_US_ADVANCED	0x02
+#define	BANDPLAN_US_EXTRA	0x04
+
+#if	CFG_BANDPLAN == BANDPLAN_DEFAULT
+const Bandplan User_Bandplan[] PROGMEM = {
+   { "U8",   255,        0UL, 	      255UL, PRIV_NONE },
+   { "UF",   254,        0UL,       65535UL, PRIV_NONE },
+   { "AM",   253,   530000UL,     1700000UL, PRIV_NONE },
+   { "160",  160,  1800000UL,     2000000UL, PRIV_NONE },
+   { "80",    80,  3500000UL,     4000000UL, PRIV_NONE },
+   { "60",    60,  5330500UL,     5403500UL, PRIV_NONE },
+   { "40",    40,  7000000UL,     7300000UL, PRIV_NONE },
+   { "30",    30, 10100000UL,    10150000UL, PRIV_NONE },
+   { "20",    20, 14000000UL,    14350000UL, PRIV_NONE },
+   { "17",    17, 18068000UL,    18168000UL, PRIV_NONE },
+   { "15",    15, 21000000UL,    21450000UL, PRIV_NONE },
+   { "12",    12, 24890000UL,    24990000UL, PRIV_NONE },
+   { "CB",    11, 26965000UL,    27405000UL, PRIV_NONE },
+   { "10CW",  10, 28000000UL,    28299999UL, PRIV_DATA },
+   { "10",    10, 28300000UL,    29700000UL, PRIV_VOICE }
+};
+#endif             // CFG_BANDPLAN == BANDPLAN_DEFAULT
+
+#if	CFG_BANDPLAN == BANDPLAN_US_EXTRA
+const Bandplan User_Bandplan[] PROGMEM = {
+//   { "160",  160,  1800000UL,     2000000UL, PRIV_ALL },
+//   { "80CW",  80,  3500000UL,     3999999UL, PRIV_DATA },
+   { "80",    80,  3600000UL,     4000000UL, PRIV_VOICE|PRIV_IMAGE },
+   // While we have privileges on 60M, we cannot ensure TX output
+   // nor channelization, so we disable TX until we can...
+//   { "60",    60,  5330500UL,     5403500UL, PRIV_NONE },
+//   { "40CW",  40,  7000000UL,     7124999UL, PRIV_CW|PRIV_RTTY|PRIV_DATA },
+   { "40",    40,  7125000UL,     7300000UL, PRIV_VOICE|PRIV_IMAGE },
+   { "30",    30, 10100000UL,    10150000UL, PRIV_DATA },
+//   { "20CW",  20, 14000000UL,    14149999UL, PRIV_DATA },
+   { "20",    20, 14150000UL,    14350000UL, PRIV_VOICE },
+//   { "17CW",  17, 18068000UL,    18109999UL, PRIV_DATA },
+   { "17",    17, 18110000UL,    18168000UL, PRIV_VOICE },
+//   { "15CW",  15, 21000000UL,    21199999UL, PRIV_DATA },
+   { "15",    15, 21200000UL,    21450000UL, PRIV_VOICE },
+//   { "12CW",  12, 24890000UL,    24929999UL, PRIV_DATA },
+//   { "12",    12, 24930000UL,    24990000UL, PRIV_VOICE },
+//   { "CB",    11, 26965000UL,    27405000UL, PRIV_NONE },
+//   { "10CW",  10, 28000000UL,    28299999UL, PRIV_DATA },
+   { "10",    10, 28300000UL,    29700000UL, PRIV_VOICE }
+};
+#endif             // CFG_BANDPLAN == BANDPLAN_EXTRA
+
+#if	CFG_BANDPLAN == BANDPLAN_US_ADVANCED
+const Bandplan User_Bandplan[] PROGMEM = {
+//   { "160",  160,  1800000UL,     2000000UL, PRIV_ALL },
+//   { "80CW",  80,  3525000UL,     3999999UL, PRIV_DATA },
+   { "80",    80,  3700000UL,     4000000UL, PRIV_VOICE|PRIV_IMAGE },
+   // While we have privileges on 60M, we cannot ensure TX output
+   // nor channelization, so we disable TX until we can...
+//   { "60",    60,  5330500UL,     5403500UL, PRIV_NONE },
+//   { "40CW",  40,  7025000UL,     7124999UL, PRIV_CW|PRIV_RTTY|PRIV_DATA },
+   { "40",    40,  7125000UL,     7300000UL, PRIV_VOICE|PRIV_IMAGE },
+   { "30",    30, 10100000UL,    10150000UL, PRIV_DATA },
+//   { "20CW",  20, 14025000UL,    14149999UL, PRIV_DATA },
+   { "20",    20, 14175000UL,    14350000UL, PRIV_VOICE },
+//   { "17CW",  17, 18068000UL,    18109999UL, PRIV_DATA },
+   { "17",    17, 18110000UL,    18168000UL, PRIV_VOICE },
+//   { "15CW",  15, 21025000UL,    21199999UL, PRIV_DATA },
+   { "15",    15, 21225000UL,    21450000UL, PRIV_VOICE },
+//   { "12CW",  12, 24890000UL,    24929999UL, PRIV_DATA },
+//   { "12",    12, 24930000UL,    24990000UL, PRIV_VOICE },
+//   { "CB",    11, 26965000UL,    27405000UL, PRIV_NONE },
+//   { "10CW",  10, 28000000UL,    28299999UL, PRIV_DATA },
+//   { "10",    10, 28300000UL,    29700000UL, PRIV_VOICE }
+};
+#endif             // CFG_BANDPLAN == BANDPLAN_ADVANCED
+
+#if	CFG_BANDPLAN == BANDPLAN_US_GENERAL
+const Bandplan User_Bandplan[] PROGMEM = {
+//   { "160",  160,  1800000UL,     2000000UL, PRIV_ALL },
+//   { "80CW",  80,  3500000UL,     3999999UL, PRIV_DATA },
+   { "80",    80,  3800000UL,     4000000UL, PRIV_VOICE|PRIV_IMAGE },
+   // While we have privileges on 60M, we cannot ensure TX output
+   // nor channelization, so we disable TX until we can...
+//   { "60",    60,  5330500UL,     5403500UL, PRIV_NONE },
+//   { "40CW",  40,  7025000UL,     7124999UL, PRIV_CW|PRIV_RTTY|PRIV_DATA },
+   { "40",    40,  7175000UL,     7300000UL, PRIV_VOICE|PRIV_IMAGE },
+   { "30",    30, 10100000UL,    10150000UL, PRIV_DATA },
+//   { "20CW",  20, 14025000UL,    14149999UL, PRIV_DATA },
+   { "20",    20, 14225000UL,    14350000UL, PRIV_VOICE },
+//   { "17CW",  17, 18068000UL,    18109999UL, PRIV_DATA },
+   { "17",    17, 18110000UL,    18168000UL, PRIV_VOICE },
+//   { "15CW",  15, 21025000UL,    21199999UL, PRIV_DATA },
+   { "15",    15, 21275000UL,    21450000UL, PRIV_VOICE },
+//   { "12CW",  12, 24890000UL,    24929999UL, PRIV_DATA },
+//   { "12",    12, 24930000UL,    24990000UL, PRIV_VOICE },
+//   { "CB",    11, 26965000UL,    27405000UL, PRIV_NONE },
+//   { "10CW",  10, 28000000UL,    28299999UL, PRIV_DATA },
+   { "10",    10, 28300000UL,    29700000UL, PRIV_VOICE }
+};
+#endif             // CFG_BANDPLAN == BANDPLAN_US_GENERAL

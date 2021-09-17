@@ -1,0 +1,38 @@
+.pio
+config/*.cfg
+# Files that shouldn't get shipped (customization stuff)
+#include/color_theme.h
+#include/features.h
+#include/target.h
+#include/owner.h
+
+# My personal scratchspace folders ;)
+.merge/*
+.off/*
+
+# Build relics
+bin/*
+*.d
+*.o
+*.ko
+*.obj
+*.elf
+*.ilk
+*.map
+*.exp
+*.gch
+*.pch
+*.lib
+*.a
+*.la
+*.lo
+*.so
+*.so.*
+*.dylib
+*.exe
+*.out
+*.hex
+*.dSYM/
+*.su
+*.idb
+*.pdb

@@ -1,0 +1,12 @@
+This is my modifications to N8ME's firmware.
+
+I'm not sure where to find him so, i've thrown this up on github.
+* Edit * I've reached out to him on groups.io! hopefully he's made more progress!
+
+I've added Makefiles building, as I dislike Arduino IDE... It might still build in arduino, idk
+
+Edit  include/defines.h to set features and include/owner.h to set bandplan and callsign.
+
+Run make
+
+Good luck!
